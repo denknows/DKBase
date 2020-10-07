@@ -14,42 +14,58 @@ use Illuminate\Database\Eloquent\Model;
 abstract class DKBase
 {
     /**
-     * @var $model
+     * The repository model.
+     *
+     * @var \Illuminate\Database\Eloquent\Model
      */
     protected $model;
 
     /**
-     * @var $query
+     * The query builder.
+     *
+     * @var \Illuminate\Database\Eloquent\Builder
      */
     protected $query;
 
     /**
-     * @var $take
+     * Alias for the query limit.
+     *
+     * @var int
      */
     protected $take;
 
     /**
-     * @var array $with
+     * Array of related models to eager load.
+     *
+     * @var array
      */
     protected $with = [];
 
     /**
-     * @var array $wheres
+     * Array of one or more where clause parameters.
+     *
+     * @var array
      */
     protected $wheres = [];
 
     /**
-     * @var array $whereIns
+     * Array of one or more where in clause parameters.
+     *
+     * @var array
      */
     protected $whereIns = [];
 
     /**
-     * @var array $orderBys
+     * Array of one or more ORDER BY column/value pairs.
+     *
+     * @var array
      */
     protected $orderBys = [];
 
     /**
-     * @var array $scopes
+     * Array of scope methods to call on the model.
+     *
+     * @var array
      */
     protected $scopes = [];
 
@@ -413,10 +429,10 @@ abstract class DKBase
 
     /**
      * @param $column
-     * @param null $key
+     * @param $key
      * @return \Illuminate\Support\Collection
      */
-    public function pluck($column, $key = null)
+    public function pluck($column, $key = [])
     {
         $this->newQuery();
 
