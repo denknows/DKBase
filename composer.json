@@ -1,0 +1,53 @@
+{
+    "name": "denknows/dkbase",
+    "description": "Base repository",
+    "keywords": [
+        "denknows",
+        "dkbase"
+    ],
+    "homepage": "https://github.com/denknows/dkbase",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Faidz Ubpon",
+            "email": "mfubpon@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Denknows\\DKBase\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Denknows\\DKBase\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Denknows\\DKBase\\DKBaseServiceProvider"
+            ],
+            "aliases": {
+                "DKBase": "Denknows\\DKBase\\DKBaseFacade"
+            }
+        }
+    }
+}
