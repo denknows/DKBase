@@ -14,6 +14,13 @@ use Illuminate\Database\Eloquent\Model;
 abstract class DKBase
 {
     /**
+     * The repository app.
+     *
+     * @var \Illuminate\Database\Eloquent\Model
+     */
+    protected $app;
+
+    /**
      * The repository model.
      *
      * @var \Illuminate\Database\Eloquent\Model
@@ -74,9 +81,10 @@ abstract class DKBase
      *
      * @throws GeneralException
      */
-    public function __construct()
+    public function __construct(Container $app)
     {
-        $this->makeModel();
+        $this->app = $app;
+        $this->model = $this->makeModel();
     }
 
     /**
@@ -85,21 +93,6 @@ abstract class DKBase
      * @return mixed
      */
     abstract public function model();
-
-    /**
-     * @return \Illuminate\Contracts\Foundation\Application|Model
-     * @throws GeneralException
-     */
-    public function makeModel()
-    {
-        $model = resolve($this->model());
-
-        if (!$model instanceof Model) {
-            throw new GeneralException("Class {$this->model()} must be an instance of " . Model::class);
-        }
-
-        return $this->model = $model;
-    }
 
     /**
      * @param array|string[] $columns
@@ -441,5 +434,20 @@ abstract class DKBase
         $this->unsetClauses();
 
         return $results;
+    }
+
+    /**
+     * @return mixed
+     * @throws Exception
+     */
+    private function makeModel()
+    {
+        $model = $this->app->make($this->model());
+
+        if (!$model instanceof Model) {
+            throw new Exception("Class {$this->model()} must be an instance of Illuminate\\Database\\Eloquent\\Model");
+        }
+
+        return $model;
     }
 }
