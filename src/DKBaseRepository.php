@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class DKBase
+ * Class DKBaseRepository
  *
- * @package Denknows\DKBase
+ * @package Denknows\DKBaseRepository
  */
-abstract class DKBase
+abstract class DKBaseRepository
 {
     /**
      * The repository app.
@@ -77,7 +77,7 @@ abstract class DKBase
     protected $scopes = [];
 
     /**
-     * DKBase constructor.
+     * DKBaseRepository constructor.
      *
      * @throws GeneralException
      */

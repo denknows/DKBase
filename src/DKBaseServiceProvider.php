@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 /**
  * Class DKBaseServiceProvider
  *
- * @package Denknows\DKBase
+ * @package Denknows\DKBaseRepository
  */
 class DKBaseServiceProvider extends ServiceProvider
 {
