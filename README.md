@@ -1,8 +1,9 @@
 # Denknows Base Repository
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/denknows/dkbase.svg?style=flat-square)](https://packagist.org/packages/denknows/dkbase)
-[![Build Status](https://img.shields.io/travis/denknows/dkbase/master.svg?style=flat-square)](https://travis-ci.org/denknows/dkbase)
+[![Build Status](https://scrutinizer-ci.com/g/denknows/DKBase/badges/build.png?b=master)](https://scrutinizer-ci.com/g/denknows/DKBase/build-status/master)
 [![Quality Score](https://img.shields.io/scrutinizer/g/denknows/dkbase.svg?style=flat-square)](https://scrutinizer-ci.com/g/denknows/dkbase)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/denknows/DKBase/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 [![Total Downloads](https://img.shields.io/packagist/dt/denknows/dkbase.svg?style=flat-square)](https://packagist.org/packages/denknows/dkbase)
 
 This package can be used in all laravel web application.
